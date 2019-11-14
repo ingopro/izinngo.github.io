@@ -88,8 +88,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-# theme: Butterfly
-theme: melody
+theme: Butterfly
+# theme: melody
 
 
 # Deployment
