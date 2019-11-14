@@ -1,1 +1,0 @@
-$((function(){void 0!==GLOBAL_CONFIG.Snackbar&&null==Cookies.get("Snackbar_welcome")&&loadScript("https://pv.sohu.com/cityjson?ie=utf-8",(function(){setTimeout((function(){let e="歡迎來自 "+returnCitySN.cname+"("+returnCitySN.cip+") 的朋友";snackbarShow(e,"",3e3)}),400),Cookies.set("Snackbar_welcome","Done")}))}));
