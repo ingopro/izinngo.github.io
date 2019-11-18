@@ -17,8 +17,7 @@ else if !is_post()
 - var photo_link = url_check (photo_check) ? photo_check : config.url + photo_check
 
 if is_current('/movies/', [strict])
-  meta(name="referrer" content="none")
-
+  meta(name="referrer" content="no-referrer")
 
 //- 預解析
 link(rel="preconnect" href="//cdn.jsdelivr.net")

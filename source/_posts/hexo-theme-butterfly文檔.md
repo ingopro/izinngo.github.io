@@ -12,6 +12,7 @@ cover: https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-co
 abbrlink: 21cfbf15
 date: 2019-06-17 16:22:52
 top_img:
+top: True
 ---
 {% note danger %}
 Butterfly已經升級到V2.0.0,從舊版本升級到V2.0.0,**需重新配置butterfly.yml(_config.yml)**
