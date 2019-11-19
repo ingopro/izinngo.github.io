@@ -162,7 +162,7 @@ encrypt: # hexo-blog-encrypt
 
 douban:
   user: iamjerryc
-  builtin: true
+  builtin: false
   movie:
     title: '那些年,我看過的電影'
     quote: '過去、現在、未來'
@@ -187,3 +187,4 @@ live2d:
     show: true
   react:
     opacity: 0.7
+

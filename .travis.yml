@@ -17,7 +17,7 @@ before_script:
 
 
 script:
-  - hexo clean && hexo algolia && hexo g && gulp
+  - hexo clean && hexo algolia && hexo g && hexo douban && gulp
   - cd ./public
   - git init
   - git config user.name "${GIT_NAME}"

@@ -14,6 +14,7 @@ date: 2019-06-17 16:22:52
 top_img:
 top: True
 ---
+
 {% note danger %}
 Butterfly已經升級到V2.0.0,從舊版本升級到V2.0.0,**需重新配置butterfly.yml(_config.yml)**
 {% endnote %}
@@ -23,7 +24,7 @@ Butterfly已經升級到V2.0.0,從舊版本升級到V2.0.0,**需重新配置butt
 {% endnote %}
 
 {% note primary %}
-本教程更新于2019年11月3日
+本教程更新于2019年11月20日
 {% endnote %}
 
 # 快速開始
@@ -226,6 +227,12 @@ Flink:
 - zh-CN (簡體中文)
 - zh-TW (繁體中文)
 
+## 網站資料
+
+修改網站各種資料，例如標題、副標題和郵箱等個人資料，請修改博客根目錄的`_config.yml`
+
+![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/20191120000444.png)
+
 ## 導航菜單
 
 配置`butterfly.yml`
@@ -250,11 +257,12 @@ menu:
 > 顯示名稱: 
 > 
 > 路徑||icon
->
->sub-menu格式
->
+> 
+> sub-menu格式
+> 
 >  名稱||icon:
->    - 名稱 || 路徑 || icon
+> 
+> - 名稱 || 路徑 || icon
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-menu.png)
 
@@ -385,7 +393,6 @@ Mobile:
 
 ![1560603353743](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-socila-icon-mobile.png)
 
-
 ## 主頁文章節選(自動節選和文章頁description)
 
 因為主題UI的關係，`主頁文章節選`只支持`自動節選`和`文章頁description`。優先選擇`自動節選`。
@@ -507,7 +514,6 @@ reward:
 
 ```yaml
 default_cover: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png
-
 ```
 
 當配置多張圖片時,會隨機選擇一張作爲cover.此時寫法應爲
@@ -517,8 +523,6 @@ default_cover:
   - https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png
   - https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg2.png
   - https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg3.png
-
-
 ```
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-post-cover.png)
@@ -794,6 +798,7 @@ note:
   # Offset also applied to label tag variables. This option can work with disabled note tag.
   light_bg_offset: 0
 ```
+
 ### 用法
 
 ```md
@@ -840,7 +845,7 @@ markdown 圖片格式
 
 ## 評論
 
->只能選擇一個評論服務商
+> 只能選擇一個評論服務商
 
 ### Disqus
 
@@ -1139,7 +1144,7 @@ markdown_it_plus:
 
 配置`butterfly.yml`，比如：
 
->顏色值必須被雙引號包裹，就像`"#000"`而不是`#000`。否則將會在構建的時候報錯！
+> 顏色值必須被雙引號包裹，就像`"#000"`而不是`#000`。否則將會在構建的時候報錯！
 
 ```yaml
 theme_color:
@@ -1219,7 +1224,6 @@ canvas_ribbon:
   zIndex: -1
   click_to_change: false  #設置是否每次點擊都更換彩帶
   mobile: false # false 手機端不顯示 true 手機端顯示
-
 ```
 
 相關配置可查看[canvas_ribbon](https://github.com/hustcc/ribbon.js)
@@ -1234,7 +1238,6 @@ canvas_ribbon:
 canvas_ribbon_piao:
   enable: true
   mobile: false # false 手機端不顯示 true 手機端顯示
-
 ```
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-canvas-ribbon-piao.gif)
@@ -1251,8 +1254,8 @@ canvas_nest:
   zIndex: -1 # z-index property of the background, default: -1.
   count: 99 # the number of lines, default: 99.
   mobile: false # false 手機端不顯示 true 手機端顯示
-
 ```
+
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-canvas_nest.gif)
 
 ### 鼠標點擊效果
@@ -1265,6 +1268,7 @@ canvas_nest:
 fireworks:
   enable: true
 ```
+
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-firewall.gif)
 
 #### 愛心
@@ -1276,6 +1280,7 @@ fireworks:
 click_heart:
   enable: true
 ```
+
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/click_love.gif)
 
 #### 文字
@@ -1303,6 +1308,7 @@ ClickShowText:
 ```
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/click_word.gif)
+
 ### 文章頁美化
 
 會改變ol、ul、h1-h5的樣式
@@ -1319,11 +1325,11 @@ post_beautify:
 `title-prefix-icon`填寫的是fontawesome的icon的Unicode數。
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-fontwesome-unicode.png)
 
->未開啓美化
+> 未開啓美化
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-post-beautify.png)
 
->開啓美化
+> 開啓美化
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-post-beautif.png)
 
@@ -1367,7 +1373,6 @@ subtitle:
   sub:
     - 今日事&#44;今日畢
     - Never put off till tomorrow what you can do today
-
 ```
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-index-subtitle.gif)
@@ -1497,7 +1502,7 @@ pwa:
 你也可以通過 [Web App Manifest](https://app-manifest.firebaseapp.com/)快速創建`manifest.json`。（Web App Manifest 要求至少包含一個 512*512 像素的圖標）
 
 6. 可以通過`Chrome`插件`Lighthouse`檢查 PWA 配置是否生效以及配置是否正確。
-
+   
    - 打開博客頁面
    - 啟動`Lighthouse`插件 (`Lighthouse`插件要求至少包含一個 512*512 像素的圖標)
 
@@ -1599,91 +1604,19 @@ snackbar:
 
 ![snackbar_true.gif](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/snackbar_true.gif)
 
-
 # Q & A
 
-Q. 頁面只顯示 `extends includes/layout.pug block content #recent-posts.recent-posts include includes/recent-posts.pug include includes/pagination.pug #aside_content.aside_content include includes/aside.pug`
+整理了一些網友在安裝過程中出現的問題。在提問題之前，先看有沒有解決方法。
+[Butterfly主題的Q&A](../cbfcd1ae)
 
-A. 请下载安装：`npm install hexo-renderer-pug hexo-renderer-stylus --save` or `yarn add hexo-renderer-pug hexo-renderer-stylus`
 
-Q. 報錯
-```
-ERROR C:\Users\Shawn\Desktop\Blog\themes\Butterfly\layout\includes\layout.pug:18
-16|
-17| - var pageDescription = page.description || page.title || config.description || ‘’
+# 打賞
 
-18| - var pageKeywords = (config.keywords || []).join(‘,’)
-19| - if (page.tags && page.tags.data) pageKeywords = page.tags.data.map(function(tag) {return tag.name;}).join(‘,’)
-20| - var pageAuthor = config.email ? config.author + ‘,’ + config.email : config.author
-21| - var pageCopyright = config.copyright || config.author
+非常感謝以下網友的打賞
 
-(config.keywords || []).join is not a function
-```
-
-A: 在Hexo的 `_config`文檔裏的`keywords`改成一下形式
-
-```yaml
-keywords: [Jerry,JerryC,blog,安卓博客,安卓,程序员,个人博客,安卓開發,安卓博客,程序員,安卓開發,個人博客,Android]
-```
-
-Q: 配置友情鏈接頁面時出現報錯
-
-```
-ERROR D:\Desktop\orxing-blog\themes\Butterfly\layout\flink.pug:2
-    1| .flink
-  > 2|   each i in site.data.link
-    3|     p.comment-word= i.class_name
-    4|     .post-cards
-    5|       ul.md-links
-
-Cannot read property 'length' of undefined
-TypeError: D:\Desktop\orxing-blog\themes\Butterfly\layout\flink.pug:2
-    1| .flink
-  > 2|   each i in site.data.link
-    3|     p.comment-word= i.class_name
-    4|     .post-cards
-    5|       ul.md-links
-
-Cannot read property 'length' of undefined
-    at eval (eval at wrap (D:\Desktop\orxing-blog\node_modules\pug-runtime\wrap.js:6:10), <anonymous>:1890:32)
-    at eval (eval at wrap (D:\Desktop\orxing-blog\node_modules\pug-runtime\wrap.js:6:10), <anonymous>:2017:4)
-    at template (eval at wrap (D:\Desktop\orxing-blog\node_modules\pug-runtime\wrap.js:6:10), <anonymous>:10152:72)
-    at Theme._View.View._compiled (D:\Desktop\orxing-blog\node_modules\hexo\lib\theme\view.js:123:48)
-    at Theme._View.View.View.render (D:\Desktop\orxing-blog\node_modules\hexo\lib\theme\view.js:29:15)
-    at D:\Desktop\orxing-blog\node_modules\hexo\lib\hexo\index.js:349:21
-    at tryCatcher (D:\Desktop\orxing-blog\node_modules\bluebird\js\release\util.js:16:23)
-    at D:\Desktop\orxing-blog\node_modules\bluebird\js\release\method.js:15:34
-    at RouteStream._read (D:\Desktop\orxing-blog\node_modules\hexo\lib\hexo\router.js:123:3)
-    at RouteStream.Readable.read (_stream_readable.js:457:10)
-    at resume_ (_stream_readable.js:936:12)
-    at processTicksAndRejections (internal/process/task_queues.js:84:9)
-```
-
-A: 請檢查 `link.yml`文檔内代碼的空格
-
-Q: 升級最新版本hexo g後報錯
-
-```
-INFO  Deleted database.
-INFO  Start processing
-FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
-TypeError: Cannot read property 'enable' of undefined
-    at Hexo.<anonymous> (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/themes/Butterfly/scripts/post-lazyload.js:5:23)
-    at Hexo.tryCatcher (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/util.js:16:23)
-    at Hexo.<anonymous> (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/method.js:15:34)
-    at /Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/hexo/lib/extend/filter.js:60:50
-    at tryCatcher (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/util.js:16:23)
-    at Object.gotValue (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/reduce.js:155:18)
-    at Object.gotAccum (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/reduce.js:144:25)
-    at Object.tryCatcher (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/util.js:16:23)
-    at Promise._settlePromiseFromHandler (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/promise.js:517:31)
-    at Promise._settlePromise (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/promise.js:574:18)
-    at Promise._settlePromiseCtx (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/promise.js:611:10)
-    at _drainQueueStep (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/async.js:142:12)
-    at _drainQueue (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/async.js:131:9)
-    at Async._drainQueues (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/async.js:147:5)
-    at Immediate.Async.drainQueues [as _onImmediate] (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/async.js:17:14)
-    at processImmediate (internal/timers.js:439:21)
-```
-
-A: 請參照最新版的_config.xml, 比對后，把缺的配置複製到butterfly.xml去
+| 名字     | 金額 |
+| -------- | ---- |
+| iMIGw0   | 10   |
+| 百事可樂 | 10   |
+| A*.      | 0.01 |
+| B*X      | 2.33 |

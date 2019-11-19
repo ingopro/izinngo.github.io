@@ -216,18 +216,18 @@ addtoany:
 #   enable: false
 #   uid: MTAyMC8zNzkzMy8xNDQ2Mw==
 
-# gitalk:
-#   enable: false
-#   client_id: e29047f3348812f91dc4
-#   client_secret: 19f1b31f9ba93c500ebd0d6d3c554ed89f51f051
-#   repo: jerryc127.github.io
-#   owner: jerryc127
-#   admin: jerryc127
-#   language: zh-CN   # en , zh-CN , zh-TW
+gitalk:
+  enable: true
+  client_id: e29047f3348812f91dc4
+  client_secret: 19f1b31f9ba93c500ebd0d6d3c554ed89f51f051
+  repo: jerryc127.github.io
+  owner: jerryc127
+  admin: jerryc127
+  language: zh-TW   # en , zh-CN , zh-TW
 
 # valine comment system. https://valine.js.org
 valine:
-  enable: true # if you want use valine,please set this value is true
+  enable: false # if you want use valine,please set this value is true
   appId: Nqk3HyM7cCzLyn4pki1bkyoE-MdYXbMMI  # leancloud application app id
   appKey: M3YQw3pEn1yq7OU5vuH3r2WU  # leancloud application app key
   notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki

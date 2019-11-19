@@ -66,11 +66,6 @@ class:
       link: https://yoaio.com
       avatar: https://yoaio.com/images/avatar.png
       descr: 身體和靈魂，總有一個在路上！
-    17: 
-      name: 楓糖
-      link: https://maplesugar.gitlab.io
-      avatar: https://maplesugar.gitlab.io/uploads/maple-leaf-avatar.jpg
-      descr: Male Geek
     18: 
       name: LarsCheng
       link: http://larscheng.coding.me/
@@ -111,19 +106,30 @@ class:
       link: http://www.andus.top
       avatar: http://www.andus.top/images/head-nav.png
       descr: 面朝大海，春暖花開
+    26: 
+      name: 博採眾長 / 李瑞豪
+      link: https://lruihao.cn
+      avatar: https://lruihao.cn/images/site-meta.jpg
+      descr: 從 ACM 到 Web，分享程式、技巧、乾貨，記錄心情、學習、成長！
 
   
 
-# class2:
-#   class_name: 無法訪問
-#   link_list:
-#     1:    
-#       name: Aaron’s Blog
-#       link: https://aoaoao.me/
-#       avatar: https://v2ex.assets.uxengine.net/gravatar/3800f67051ba9440ffecf2c3e8734933?s=128&d=mm
-#       descr: 00後/大一狗/火車控/SE@CQU/業餘無限墊入門ing
-#     2: 
-#       name: bboysoul
-#       link: https://www.bboysoul.com/
-#       avatar: https://www.bboysoul.com/img/blog/head.png
-#       descr: bboysoul
+class2:
+  class_name: 無法訪問
+  link_list:
+    1:    
+      name: Aaron’s Blog
+      link: https://aoaoao.me/
+      avatar: https://v2ex.assets.uxengine.net/gravatar/3800f67051ba9440ffecf2c3e8734933?s=128&d=mm
+      descr: 00後/大一狗/火車控/SE@CQU/業餘無限墊入門ing
+    2: 
+      name: bboysoul
+      link: https://www.bboysoul.com/
+      avatar: https://www.bboysoul.com/img/blog/head.png
+      descr: bboysoul
+    3: 
+      name: 楓糖
+      link: https://maplesugar.gitlab.io
+      avatar: https://maplesugar.gitlab.io/uploads/maple-leaf-avatar.jpg
+      descr: Male Geek
+
