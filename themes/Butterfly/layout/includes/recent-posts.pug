@@ -44,13 +44,14 @@ each article , index in page.posts.data
         .content!= article.description
   
   if index%3 == 0 && index !== 0
-    ins(class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8919908724705274"
-     data-ad-slot="4001379443"
-     data-ad-format="auto"
-     data-full-width-responsive="true")
-    script.
-        (adsbygoogle = window.adsbygoogle || []).push({});
+    .recent-post-item.article-container
+      ins(class="adsbygoogle"
+      style="display:block"
+      data-ad-format="fluid"
+      data-ad-layout-key="-fb+5w+4e-db+86"
+      data-ad-client="ca-pub-8919908724705274"
+      data-ad-slot="1538867630")
+      script.
+          (adsbygoogle = window.adsbygoogle || []).push({});
 
     
