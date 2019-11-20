@@ -10,13 +10,15 @@ if theme.aside.card_recent_post
 if theme.aside.card_categories   
   include widget/card_categories.pug
 
-<!-- aside -->
-ins(class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-8919908724705274"
-    data-ad-slot="8108145410"
-    data-ad-format="auto"
-    data-full-width-responsive="true")
+.card_widget.card-ad
+  ins(class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-8919908724705274"
+      data-ad-slot="8108145410"
+      data-ad-format="auto"
+      data-full-width-responsive="true")
+  script.
+    (adsbygoogle = window.adsbygoogle || []).push({});
 
 if theme.aside.card_tags
   include widget/card_tags.pug
