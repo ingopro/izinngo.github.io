@@ -13,8 +13,7 @@ install:
   - npm install
 
 before_script:
- # - npm install -g gulp
-
+  # - npm install -g gulp
 
 script:
   - hexo clean && hexo algolia && hexo g && hexo douban && gulp
@@ -25,8 +24,7 @@ script:
   - git add .
   - git commit -m "Update"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
-  - git push --force --quiet "https://jerry_c:${CD_TOKEN}@${CD_REF}" master:master
-
+  - git push --force --quiet "https://${CDT_TOKEN}@${CDT_REF}" master:master
 
 # after_script:
 
