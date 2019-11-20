@@ -42,5 +42,15 @@ each article , index in page.posts.data
         .content!= expert
       else
         .content!= article.description
+  
+  if index%3 == 0 && index !== 0
+    ins(class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8919908724705274"
+     data-ad-slot="4001379443"
+     data-ad-format="auto"
+     data-full-width-responsive="true")
+    script.
+        (adsbygoogle = window.adsbygoogle || []).push({});
 
     

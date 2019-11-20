@@ -6,9 +6,6 @@ if theme.aside.card_announcement
 
 if theme.aside.card_recent_post
   include widget/card_recent_post.pug
-  
-if theme.aside.card_categories   
-  include widget/card_categories.pug
 
 .card_widget.card-ad
   ins(class="adsbygoogle"
@@ -19,6 +16,10 @@ if theme.aside.card_categories
       data-full-width-responsive="true")
   script.
     (adsbygoogle = window.adsbygoogle || []).push({});
+
+  
+if theme.aside.card_categories   
+  include widget/card_categories.pug
 
 if theme.aside.card_tags
   include widget/card_tags.pug
