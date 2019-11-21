@@ -126,10 +126,14 @@ if theme.google_analytics
     ga('create', '!{theme.google_analytics}', 'auto');
     ga('send', 'pageview');
 
-if (theme.google_adsense && theme.google_adsense.enable)
-  script(async src=theme.google_adsense.js)
-  script.
-    (adsbygoogle = window.adsbygoogle || []).push({});
+
+script(async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+script.
+  (adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: "ca-pub-8919908724705274",
+  enable_page_level_ads: true
+  });
+
 
 
 if !is_post()

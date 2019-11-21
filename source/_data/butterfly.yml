@@ -255,15 +255,7 @@ ICP:
   text: 
   icon: /img/icp.png
 
-# Ads
-# ---------------
-# Google Adsense
-google_adsense:
-  enable: true
-  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
-  client: ca-pub-8919908724705274
-  enable_page_level_ads: true
-
+  
 ####    站長驗證    ####
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
