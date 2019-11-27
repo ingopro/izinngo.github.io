@@ -55,7 +55,7 @@ pwa:
 # Highlight theme
 # ---------------
 highlight_theme: light
-highlight_copy: true #代碼複製按鈕
+highlight_copy: false #代碼複製按鈕
 highlight_lang: true #代碼語言顯示
 highlight_shrink: false #代碼框不展開，需點擊 '>' 打開
 
@@ -146,7 +146,7 @@ archive_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/archive.jpg
 tag_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/tag-bg.png
 
 # the banner image of category page
-category_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/category-bg
+category_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/category-bg.jpg
 
 # 如果你有使用hexo-douban去生成movie界面，可配置這個
 movies_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/Photo/movie.jpg
@@ -211,19 +211,21 @@ addtoany:
 # disqus:
 #   enable: false
 #   shortname: https-jerryc-me
-  
+#   count: true
+
 # laibili:
 #   enable: false
 #   uid: MTAyMC8zNzkzMy8xNDQ2Mw==
 
-# gitalk:
-#   enable: false
-#   client_id: e29047f3348812f91dc4
-#   client_secret: 19f1b31f9ba93c500ebd0d6d3c554ed89f51f051
-#   repo: jerryc127.github.io
-#   owner: jerryc127
-#   admin: jerryc127
-#   language: zh-TW   # en , zh-CN , zh-TW
+gitalk:
+  enable: false
+  client_id: e29047f3348812f91dc4
+  client_secret: 19f1b31f9ba93c500ebd0d6d3c554ed89f51f051
+  repo: jerryc127.github.io
+  owner: jerryc127
+  admin: jerryc127
+  language: zh-TW   # en , zh-CN , zh-TW
+  count: true
 
 # valine comment system. https://valine.js.org
 valine:
@@ -238,7 +240,7 @@ valine:
   placeholder: 記得留下你的昵稱和郵箱....可以快速收到回復 # valine comment input placeholder(like: Please leave your footprints )
   guest_info: nick,mail,link #valine comment header info
   bg: /img/comment_bg.png
-
+  count: true
 
 #####     Footer Settings    ####
 # ------------------------------------
@@ -255,7 +257,16 @@ ICP:
   text: 
   icon: /img/icp.png
 
-  
+# Ads
+# ---------------
+# Google Adsense
+google_adsense:
+  enable: true
+  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+  client: ca-pub-8919908724705274
+  enable_page_level_ads: true
+
+
 ####    站長驗證    ####
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
@@ -321,9 +332,12 @@ related_post:
 # 主頁設置
 # 默認top_img全屏，site_info在中間
 # 使用默認, 都無需填寫（建議默認）
-index_site_info_top:   #主頁標題距離頂部距離  例如 300px/300em/300rem/10%
-index_top_img_height:  #主頁top_img高度 例如 300px/300em/300rem  不能使用百分比
+index_top_img_height: #主頁top_img高度 例如 300px/300em/300rem  不能使用百分比
 
+# 主頁文章COVER顯示位置
+# 三個值可配置 left , right , both
+# left(全部圖片顯示在左邊)，right(全部圖片顯示在右邊)，both(左右左右順序顯示)
+index_post_cover: both
 
 # category和tag頁的UI設置
 # index 值代表 UI將與首頁的UI一樣

@@ -2,7 +2,7 @@ each article , index in page.posts.data
   .recent-post-item.article-container
     - var link = article.link || article.path
       if index%2 == 0
-        .post_cover.pull_left.left_radius
+        .post_cover.left_radius
           a(href=url_for(link) title=article.title || _p('no_title'))
             - var post_cover = article.cover
             if theme.lazyload.enable
@@ -10,7 +10,7 @@ each article , index in page.posts.data
             else
               img.post_bg(src=`${post_cover}` onerror=`onerror=null;src='${theme.lodding_bg.post_page}'`)
       else
-        .post_cover.pull_right.right_radius
+        .post_cover.right_radius
           a(href=url_for(link) title=article.title || _p('no_title'))
             - var post_cover = article.cover
             if theme.lazyload.enable
@@ -42,7 +42,7 @@ each article , index in page.posts.data
         .content!= expert
       else
         .content!= article.description
-  
+
   if index%3 == 0 && index !== 0
     .recent-post-item.article-container.ad_height
       ins(class="adsbygoogle"
@@ -53,5 +53,4 @@ each article , index in page.posts.data
       data-ad-slot="1538867630")
       script.
         (adsbygoogle = window.adsbygoogle || []).push({});
-
     

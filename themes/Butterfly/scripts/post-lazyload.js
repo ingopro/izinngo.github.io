@@ -6,7 +6,7 @@ hexo.extend.filter.register('after_post_render', data => {
   const cheerio = require('cheerio');
 
   const $ = cheerio.load(data.content, {decodeEntities: false});
-  const images = $('img');
+  const images = $('img').not($('.justified-gallery img'));
   if (!images.length) return;
 
   images.each((i, o) => {

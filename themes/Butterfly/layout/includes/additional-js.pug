@@ -63,33 +63,3 @@ if theme.click_heart && theme.click_heart.enable
 
 if theme.ClickShowText && theme.ClickShowText.enable
   script(src=url_for(theme.CDN.ClickShowText))
-
-script. 
-  if('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-    .then(reg => {
-        reg.addEventListener('updatefound', () => {
-            newWorker = reg.installing;
-            newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed') {
-                    if (navigator.serviceWorker.controller) {
-                      var bg = document.documentElement.getAttribute('data-theme') === 'light' ? GLOBAL_CONFIG.Snackbar.bgLight : GLOBAL_CONFIG.Snackbar.bgDark;
-                      var position = GLOBAL_CONFIG.Snackbar.position;
-                      Snackbar.show({
-                        text: '已更新最新版本',
-                        backgroundColor: bg,
-                        duration: 3000,
-                        pos: position,
-                        actionText: '點擊刷新',
-                        onActionClick: function(element) {
-                          location.reload();
-                         }
-                      });
-
-                    }
-                  }
-              });
-          });
-      });
-  }
-

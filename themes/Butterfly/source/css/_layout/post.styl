@@ -109,6 +109,9 @@ if hexo-config("post_beautify.enable")
     &:hover
       background: $light-blue
       color: $white
+  
+  &-pv-cv
+    display: inline-block
 
 
 #post-content
@@ -260,16 +263,13 @@ a.fancybox
   text-align: center
   text-decoration: none
 
+p
+  margin: 0 0 0.8rem 0
+
+
 img
-  padding: $img-border-padding
   max-width: 100%
   transition: all 0.2s
-
-  &:hover
-    box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5)
-
-.code-area-wrap
-  position: relative
 
 .fa-clipboard
   position: absolute
@@ -285,13 +285,14 @@ img
 
 .code_lang
   position: absolute
-  font-weight: bold;
-  font-size: 0.8rem;
-  line-height: 1.4rem;
+  font-weight: bold
+  font-size: 0.8rem
+  line-height: 1.4rem
   color: $highlight-foreground
-  left: 30px
+  left: 15px
   z-index: 1
   cursor: pointer
+  text-transform: capitalize
 
 .code-expand
   position: absolute
@@ -302,6 +303,10 @@ img
   cursor: pointer
   transition: all .3s
   transform: rotate(0deg)
+
+  & + .code_lang
+    left: 30px
+
 
 .code-closed
   transform: rotate(-90deg) !important
@@ -356,15 +361,6 @@ img
       word-break: break-word
 
 
-@media screen and (max-width: $sm)
-  #top-container
-    #post-title
-      font-size: 1rem
-
-  #post-title
-    font-size: 1.1rem
-
-
 @media screen and (min-width: $md)
   .layout_post
     width: $content-large-width
@@ -377,13 +373,13 @@ img
       
 
 // 文章字體
-#post-content p
-  font-size: 1.1em
+// #post-content p
+//   font-size: 1.1em
 
 
-#post-content ol,
-#post-content ul 
-  font-size: 1em
+// #post-content ol,
+// #post-content ul 
+//   font-size: 1em
 
 
 
@@ -409,57 +405,82 @@ img
       display: inline-block
 
     .post_share
-      width: fit-content;
-      display: inline-block;
-      float: right;
+      width: fit-content
+      display: inline-block
+      float: right
       margin: 0.4rem 0
 
       .social-share
         font-size: 12px
 
       .social-share .social-share-icon
-        width: 26px;
-        height: 26px;
-        font-size: 15px;
-        line-height: 25px;
+        width: 26px
+        height: 26px
+        font-size: 15px
+        line-height: 25px
 
       .social-share a
-        margin: 0 4px;
+        margin: 0 4px
     
 
-  #post
-    a
-      text-decoration: none
-      color: $light-blue
+#post
+  a
+    text-decoration: none
+    color: $light-blue
+
+    &:hover
+      text-decoration: underline
+
+  img
+    margin: 0.8rem auto     
+      
+       
+    // h1,
+    // h2,
+    // h3,
+    // h4,
+    // h5,
+    // h6
+    //   margin: 1rem 0 0.8rem 0
     
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6
-      margin: 1rem 0 0.8rem 0
-    
-    img
-      margin: 0 auto 0.8rem 
+    // img
+    //   margin: 0 auto 0.8rem 
         
-    blockquote,
-    p
-      margin: 0 0 0.8rem 0
+    // blockquote,
+    // p
+    //   margin: 0 0 0.8rem 0
 
-    iframe,.note
-      margin: 0 0 0.8rem 0
+//     iframe,.note
+//       margin: 0 0 0.8rem 0
 
-.layout_post,
-.layout_page
-  opacity: 1
+// .layout_post,
+// .layout_page
+//   opacity: 1
 
 @media screen and (max-width: 1024px)
   .layout_post
     margin: 0 15px
     width: auto
 
-@media screen and (max-width:768px)
+@media screen and (max-width: $sm)
   .layout_post
     padding: 1.8rem 1rem
     margin: 0px 5px
+  
+  .post-meta-pv-cv
+    display: block
+  
+    .post-meta__separator:first-child
+      display: none
+
+  #top-container
+    #post-title
+      font-size: 1.2rem
+
+    #post-info
+      font-size: 95%
+#post,
+#page
+  ol,
+  ul 
+    margin: 0 0 1rem 0

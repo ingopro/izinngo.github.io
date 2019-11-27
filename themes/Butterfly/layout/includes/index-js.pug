@@ -92,22 +92,5 @@ if theme.subtitle.enable
       backSpeed: 50
       });
 
-if !theme.index_top_img_height && !theme.index_site_info_top
-  script.
-    //首頁fullpage
-    function alignContent() {
-      for (var n = $(window).height(), e = document.querySelectorAll(".full_page"), i = 0; i < e.length; i++) 
-        e[i].style.height = n + "px";
-        $("#site-info").each(function () {
-          var x = $(this).height();
-          $(this).css("top", (n-x)/2)       
-        })
-    }
-    alignContent();
-    
-    $(window).bind("resize", function () {
-      alignContent()
-    })
-
 
 

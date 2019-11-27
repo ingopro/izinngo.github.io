@@ -111,6 +111,9 @@
   .article-container pre
     background-color: lighten(#2d3035, 2)
 
+  .highlight-tools
+    background: lighten(#2d3035, 3) 
+
   .article-container .highlight:not(.js-file-line-container)
     background-color: lighten(#2d3035, 2) 
     .code pre
@@ -118,12 +121,9 @@
 
     .gutter pre
       background: lighten(#2d3035, 3) 
-
-    &:after
-      background: lighten(#2d3035, 3) 
     
     table
-      &:after,.copy-notice
+      .copy-notice
         background: lighten(#2d3035, 3)  
     
     &::-webkit-scrollbar-thumb

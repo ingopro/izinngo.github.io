@@ -115,7 +115,7 @@ top_img: https://i.loli.net/2019/05/22/5ce53eb6dc82757840.jpg
 default_top_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/top_img_index.jpg
 
 # the default cover of the post
-default_cover: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png
+default_cover: https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@latest/cover/default_bg.png
 
 # the banner image of archive page
 archive_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/archive.jpg

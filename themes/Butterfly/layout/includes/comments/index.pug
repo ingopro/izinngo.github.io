@@ -9,13 +9,6 @@ if d || l || gt || v
     .comment_headling
       i.fa.fa-comments.fa-fw(aria-hidden="true")
       span= ' ' + _p('comment')
-    .CommentButtom
-      //- a#loddingButtom.loddingButtom--primary.loddingButtom--animated(target="_self" href="javascript:;")='點擊加載評論'
-      button.type1#loddingButtom='點擊加載評論'
-
-
-
-
     if d
       include ./disqus.pug
     else if l

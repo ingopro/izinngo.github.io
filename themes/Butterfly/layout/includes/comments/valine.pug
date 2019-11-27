@@ -2,10 +2,6 @@ if theme.valine && theme.valine.enable
   #vcomment.vcomment
   script(src=url_for(theme.CDN.valine))
   script.
-    document.getElementById('loddingButtom').addEventListener('click',function(){
-         
-    document.getElementsByClassName('CommentButtom')[0].classList.add('is_invisible');
-
     var notify = #{ theme.valine.notify } == true ? true : false;
     var verify = #{ theme.valine.verify } == true ? true : false;
     var GUEST_INFO = ['nick','mail','link'];
@@ -27,5 +23,3 @@ if theme.valine && theme.valine.enable
       lang:'#{theme.valine.lang}',
       recordIP: true
     });
-    })
-
