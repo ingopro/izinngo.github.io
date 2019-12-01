@@ -71,11 +71,13 @@ include ./head/analytics.pug
 
 if (theme.google_adsense && theme.google_adsense.enable)
   script(async src=theme.google_adsense.js)
+  //- script.
+  //-   (adsbygoogle = window.adsbygoogle || []).push({
+  //-     google_ad_client: '!{theme.google_adsense.client}',
+  //-     enable_page_level_ads: '!{theme.google_adsense.enable_page_level_ads}'
+  //-   });
   script.
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: '!{theme.google_adsense.client}',
-      enable_page_level_ads: '!{theme.google_adsense.enable_page_level_ads}'
-    });
+    (adsbygoogle = window.adsbygoogle || []).push({});
 
 if !is_post()
   link(rel="preload" href=url_for(top_img)  as="image" )

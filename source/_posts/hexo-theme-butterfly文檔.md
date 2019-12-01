@@ -20,6 +20,11 @@ Butterfly已經升級到V2.0.0，從舊版本升級到V2.0.0，**需重新配置
 {% endnote %}
 
 {% note info %}
+很多人希望能有交流平臺可以進行討論。因此，我開通了一個Telegram群，有興趣的可以加入。
+https://t.me/hexo_butterfly
+{% endnote %}
+
+{% note info %}
 關於主題自定義的問題，建議仔細觀察主題代碼的寫法，自己動手操作，不懂的可以[Google](https://www.google.com/)，我不一定會回答你的問題，請見諒。
 如果你對主題安装有疑問或者發現bugs，請點擊[這裏](https://github.com/jerryc127/hexo-theme-butterfly/issues)反饋/詢問
 {% endnote %}
