@@ -21,6 +21,11 @@ class:
       link: https://www.hojun.cn/
       avatar: https://cdn.jsdelivr.net/gh/honjun/ImageHosting/sina/006bYVyvgy1ftand2qurdj303c03cdfv.jpg
       descr: hello,stranger
+    5: 
+      name: 楓糖
+      link: https://maplesugar.gitlab.io
+      avatar: https://maplesugar.gitlab.io/uploads/maple-leaf-avatar.jpg
+      descr: Male Geek
     6:            
       name: voicezyx’s Blog
       link: https://voicezyxzyx.github.io/
@@ -112,24 +117,18 @@ class:
       avatar: https://lruihao.cn/images/site-meta.jpg
       descr: 從 ACM 到 Web，分享程式、技巧、乾貨，記錄心情、學習、成長！
 
-  
 
-class2:
-  class_name: 無法訪問
-  link_list:
-    1:    
-      name: Aaron’s Blog
-      link: https://aoaoao.me/
-      avatar: https://v2ex.assets.uxengine.net/gravatar/3800f67051ba9440ffecf2c3e8734933?s=128&d=mm
-      descr: 00後/大一狗/火車控/SE@CQU/業餘無限墊入門ing
-    2: 
-      name: bboysoul
-      link: https://www.bboysoul.com/
-      avatar: https://www.bboysoul.com/img/blog/head.png
-      descr: bboysoul
-    3: 
-      name: 楓糖
-      link: https://maplesugar.gitlab.io
-      avatar: https://maplesugar.gitlab.io/uploads/maple-leaf-avatar.jpg
-      descr: Male Geek
+# class2:
+#   class_name: 無法訪問
+#   link_list:
+#     1:    
+#       name: Aaron’s Blog
+#       link: https://aoaoao.me/
+#       avatar: https://v2ex.assets.uxengine.net/gravatar/3800f67051ba9440ffecf2c3e8734933?s=128&d=mm
+#       descr: 00後/大一狗/火車控/SE@CQU/業餘無限墊入門ing
+#     2: 
+#       name: bboysoul
+#       link: https://www.bboysoul.com/
+#       avatar: https://www.bboysoul.com/img/blog/head.png
+#       descr: bboysoul
 
