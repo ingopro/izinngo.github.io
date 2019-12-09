@@ -61,11 +61,14 @@ if hexo-config("readmode") && hexo-config("readmode.enable")
       .article-container 
         pre,
         .highlight
-          background: darken($pale-yellow,5);
-        
-      .highlight-tools
-        background: darken($pale-yellow,10);
-      
+          background: darken($pale-yellow,3)
+
+    .highlight-tools
+      display: none
+    
+    .highlight
+      display: block !important
+    
     blockquote
       border-left: 0.2rem solid #d6dbdf
       background-color: rgba(102,128,153,.05)

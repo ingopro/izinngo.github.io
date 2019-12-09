@@ -537,10 +537,17 @@ autoChangeMode: 2
 #------------------------------------------------
 
 # 圖片大圖查看模式
-# 默認為 fancybox http://fancyapps.com/fancybox/3/
-# 可以選擇改爲 medium_zoom https://github.com/francoischalifour/medium-zoom
+# 可選 medium_zoom 或者 fancybox
+# 只選一個
+#--------------------------------------------
+# medium_zoom https://github.com/francoischalifour/medium-zoom
 medium_zoom:
   enable: true
+
+# fancybox http://fancyapps.com/fancybox/3/
+fancybox:
+  enable: false
+
 
 # Snackbar 彈窗
 # https://github.com/polonel/SnackBar
@@ -611,7 +618,6 @@ CDN_USE:
     # - https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/utils.js
     # - https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/main.js
     - https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js  #/js/third-party/jquery.min.js
-    - /js/utils.js
     - /js/main.js
 
 

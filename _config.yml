@@ -107,6 +107,8 @@ deploy:
 #hexo sitemap
 sitemap:
   path: sitemap.xml
+  rel: true
+
 baidusitemap:
   path: baidusitemap.xml
 
@@ -158,7 +160,11 @@ nofollow:
   exclude:
 
 encrypt: # hexo-blog-encrypt
-  enable: false
+  abstract: Here's something encrypted, password is required to continue reading.
+  message: Hey, password is required here.
+  template: <div id="hexo-blog-encrypt" data-wpm="{{hbeWrongPassMessage}}" data-whm="{{hbeWrongHashMessage}}"><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="{{hbeMessage}}" /><label>{{hbeMessage}}</label><div class="bottom-line"></div></div><script id="hbeData" type="hbeData" data-hmacdigest="{{hbeHmacDigest}}">{{hbeEncryptedData}}</script></div>
+  wrong_pass_message: Oh, this is an invalid password. Check and try again, please.
+  wrong_hash_message: Oh, these decrypted content cannot be verified, but you can still have a look.
 
 douban:
   user: iamjerryc

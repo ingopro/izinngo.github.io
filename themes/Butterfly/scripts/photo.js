@@ -1,14 +1,14 @@
-'use strict';
+'use strict'
 hexo.extend.filter.register('after_post_render', data => {
-  var theme = hexo.theme.config;
-  if (!theme.lazyload.enable) return;
+  const theme = hexo.theme.config;
 
   const cheerio = require('cheerio');
 
   const $ = cheerio.load(data.content, { decodeEntities: false });
-  const images = $('img');
+  
+  const images = $('img').not($('a>img'));
 
-  if (!theme.medium_zoom.enable) {
+  if (theme.fancybox.enable) {
     images.each((i, o) => {
       var lazyload_src = $(o).attr('src') ? $(o).attr('src') : $(o).attr("data-src")
       var alt = $(o).attr('alt')
@@ -27,16 +27,26 @@ hexo.extend.filter.register('after_post_render', data => {
 
   }
   if (theme.medium_zoom.enable) {
+    images.each((i, o) => {
+      $(o).addClass('mediumZoom')
+    })
    
-    var imgList = $(".justified-gallery img")
-  
+    var imgList = $(".justified-gallery img")  
     if (imgList.length) {
-      for (var i = 0; i < imgList.length; i++) {
+      imgList.each((i, o) => {
         var $a = $('<div></div>')
-        $(imgList[i]).wrap($a)
-      }
-    }
-  
+        $(o).wrap($a)
+      })
+    }  
+  }
+
+  if (!theme.medium_zoom.enable && !theme.fancybox.enable) {
+    var imgList = $(".justified-gallery > p >img")  
+    if (imgList.length) {
+      imgList.each((i, o) => {
+        $(o).wrap('<div></div>')
+      })
+    }  
   }
 
   data.content = $.html();

@@ -624,5 +624,4 @@ CDN:
   ClickShowText: /js/third-party/ClickShowText.js # https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@latest/js/ClickShowText.js
 
   translate: /js/tw_cn.js
-  runtimeshow: js/runtimeshow.js
 

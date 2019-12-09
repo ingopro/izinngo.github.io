@@ -7,7 +7,7 @@
     height: 110vh
     left: 0
     right: 0
-    background: alpha($black,0.7)
+    background: alpha($dark-black,0.7)
     z-index: 102
     display: none
 
@@ -23,9 +23,7 @@
     z-index: 103
     overflow-y: scroll
     display: block
-    transition: transform .3s
-    opacity: 0
-    will-change: transform
+    transition: all .5s
 
   #mobile-sidebar-menus
     .mobile_author_icon
@@ -129,32 +127,7 @@
     color: $light-black
 
     &:hover
-          color: $light-blue
-
-// 手機打開menus，toc特效
-.open-mobile-menus,
-.open-mobile-toc
-  overflow: hidden
-  #body-wrap
-    transform: translateX(-250px)
-  #page-header
-    transform: translateX(-250px)
-    &.fixed.visible
-      transform: translate3d(-250px, 100%, 0)
-  #rightside
-    transform: translate3d(-288px, 0, 0) !important
-
-.open-mobile-menus
-  padding-left: 0 !important
-
-  #mobile-sidebar
-    #mobile-sidebar-menus
-      transform: translateX(-254px)
-      opacity: 1
-
-  // pc界面打開mobile-menus需關閉sidebar
-  #sidebar
-    left: -300px !important
+      color: $light-blue
 
 .open-mobile-toc
   #mobile-sidebar

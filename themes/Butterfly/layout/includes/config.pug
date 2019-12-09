@@ -78,6 +78,14 @@
     })
   }
 
+  var runtime = theme.runtimeshow.enable
+  var fancybox = theme.fancybox.enable
+  var medium_zoom = theme.medium_zoom.enable
+  var baiduPush = theme.baidu_push && theme.baidu_push.enable
+  var isHome = is_home() ? true : false
+  var isPost = is_post() ? true : false
+
+
 script.
   var GLOBAL_CONFIG = { 
     root: '!{config.root}',
@@ -95,11 +103,16 @@ script.
       message_next: '!{_p("Snackbar.bookmark.message_next")}'
     },
     runtime_unit: '!{_p("runtime_unit")}',
+    runtime: !{runtime},
     copyright: !{copyright},
     copy_copyright_js: !{copy_copyright_js},
     ClickShowText: !{ClickShowText},
-    medium_zoom: '!{theme.medium_zoom.enable}',
-    Snackbar: !{Snackbar}
+    medium_zoom: !{medium_zoom},
+    fancybox: !{fancybox},
+    Snackbar: !{Snackbar},
+    baiduPush: !{baiduPush},
+    isHome: !{isHome},
+    isPost: !{isPost}
     
   }
 

@@ -32,7 +32,7 @@ block top_img
         .post-meta-wordcount
           if (theme.wordcount && theme.wordcount.enable)
             i.fa.fa-file-word-o.post-meta__icon.fa-fw(aria-hidden="true")
-            span= _p('post.wordcount') + ': '
+            span= _p('post.wordcount') + ':'
             span.word-count= wordcount(page.content)
             span.post-meta__separator |
             i.fa.fa-clock-o.post-meta__icon.fa-fw(aria-hidden="true")
@@ -42,31 +42,29 @@ block top_img
               span.post-meta__separator |
             if theme.busuanzi.page_pv
               i.fa.fa-eye.post-meta__icon.fa-fw(aria-hidden="true")        
-              span= _p('post.page_pv') + ': '
+              span= _p('post.page_pv') + ':'
               span#busuanzi_value_page_pv
-            if (theme.disqus && theme.disqus.enable && theme.disqus.count)
+            if (theme.disqus && theme.disqus.enable && theme.disqus.count && page.comments !== false)
               if (theme.busuanzi && theme.busuanzi.page_pv)
                 span.post-meta__separator |
               i.fa.fa-comment-o.post-meta__icon.fa-fw(aria-hidden="true")
-              span= _p('post.comments') + ': '
-                a(href=url_for(page.path) + '#post-comment')
-                  span.disqus-comment-count(data-disqus-identifier=page.path)
-            if (theme.valine && theme.valine.enable && theme.valine.count)
+              span= _p('post.comments') + ':'
+              a(href=url_for(page.path) + '#post-comment')
+                span.disqus-comment-count(data-disqus-url=page.permalink)
+            if (theme.valine && theme.valine.enable && theme.valine.count && page.comments !== false)
               if (theme.busuanzi && theme.busuanzi.page_pv)
                 span.post-meta__separator |
               i.fa.fa-comments-o.post-meta__icon.fa-fw(aria-hidden="true")
-              span= _p('post.comments') + ': '
-                a(href=url_for(page.path) + '#post-comment' itemprop="discussionUrl")
-                  span.valine-comment-count(data-xid=url_for(page.path) itemprop="commentCount")
-            if (theme.gitalk && theme.gitalk.enable && theme.gitalk.count)
+              span= _p('post.comments') + ':'
+              a(href=url_for(page.path) + '#post-comment' itemprop="discussionUrl")
+                span.valine-comment-count.comment-count(data-xid=url_for(page.path) itemprop="commentCount")
+            if (theme.gitalk && theme.gitalk.enable && theme.gitalk.count && page.comments !== false)
               if (theme.busuanzi && theme.busuanzi.page_pv)
                 span.post-meta__separator |
               i.fa.fa-comments-o.post-meta__icon.fa-fw(aria-hidden="true")
-              span= _p('post.comments') + ': '
-                a(href=url_for(page.path) + '#post-comment')
-                  span.gitalk-comment-count
-
-
+              span= _p('post.comments') + ':'
+              a(href=url_for(page.path) + '#post-comment')
+                span.gitalk-comment-count.comment-count
 
 
 block content
@@ -95,18 +93,6 @@ block content
         
   if theme.reward.enable
     include includes/reward.pug
-
-  .post-ad
-    ins(class="adsbygoogle"
-      style="display:block"
-      data-ad-format="fluid"
-      data-ad-layout-key="-fb+5w+4e-db+86"
-      data-ad-client="ca-pub-8919908724705274"
-      data-ad-slot="5978969231")
-    script.
-      (adsbygoogle = window.adsbygoogle || []).push({});
-
-
   include includes/pagination.pug
   
   if theme.related_post && theme.related_post.enable
