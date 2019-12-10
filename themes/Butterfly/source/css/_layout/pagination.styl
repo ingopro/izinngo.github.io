@@ -32,60 +32,45 @@
     height: 100%
     opacity: .4
     background-size: cover
-    transition: all 0.6s;
+    transition: all 0.6s
     object-fit: cover
     pointer-events: none
 
-  .prev_info
-    position: absolute
-    z-index: 100
-    font-weight: 400
-    width: 70%
-    color: #fff
-    overflow: hidden
-    white-space: nowrap
-    -o-text-overflow: ellipsis
-    text-overflow: ellipsis
-    display: block
-    bottom: 50px
-
+  .prev_info,
   .next_info
     position: absolute
     z-index: 100
     font-weight: 400
     width: 70%
-    color: #fff
+    color: $white
     overflow: hidden
     white-space: nowrap
-    -o-text-overflow: ellipsis
     text-overflow: ellipsis
     display: block
-    right: 40px
     bottom: 50px
+
+  .next_info
+    right: 40px
     text-align: right
 
   .pull-full
     width: 100% !important
 
-  .prev-post .label
+  .prev-post .label,
+  .next-post .label
     position: absolute
     top: 50px 
     z-index: 100
-    font-size: 13px
     display: block
     text-transform: uppercase
-    color: rgba(255,255,255,.7)
+    color: alpha($white,0.6)
+    font-size: 90%
 
   .next-post .label
-    position: absolute
-    top: 50px
     right: 40px
-    z-index: 100
-    display: block
-    text-transform: uppercase
-    color: rgba(255,255,255,.7)
 
-  .prev-post, .next-post
+  .prev-post,
+  .next-post
     width: 50%
     float: left
 
@@ -104,11 +89,11 @@
         opacity: .8
         transform:scale(1.1)
 
+.pagination_post
+  margin: 2rem 0 !important
+  background: $dark-black
 
 @media screen and (max-width:768px) 
   .prev-post, .next-post
     width: 100% !important
 
-.pagination_post
-    margin: 2rem 0 !important
-    background: #000

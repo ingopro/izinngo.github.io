@@ -35,7 +35,7 @@
   },
   "scripts": {
     "push": "hexo clean && hexo algolia && hexo g && hexo douban && gulp && hexo deploy",
-    "show": "hexo clean && hexo g && hexo s",
+    "show": "hexo clean && hexo g && gulp && hexo s",
     "update": "git init && git add . && git commit -m 'update' && git push -u origin hexo"
   },
   "devDependencies": {

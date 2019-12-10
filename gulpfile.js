@@ -7,11 +7,11 @@ terser = require('gulp-terser');
 workbox = require("workbox-build");
 concat = require('gulp-concat');
 
-gulp.task('scripts', function () {
-            return gulp.src(['./js_minify/*.js'],)
-                .pipe(concat('jerryc.js'))
-                .pipe(gulp.dest('./js/'));
-            });
+// gulp.task('scripts', function () {
+//             return gulp.src(['./js_minify/*.js'],)
+//                 .pipe(concat('jerryc.js'))
+//                 .pipe(gulp.dest('./js/'));
+//             });
 
 
         gulp.task('generate-service-worker', () => {
@@ -49,7 +49,8 @@ gulp.task('scripts', function () {
                     removeScriptTypeAttributes: true, //删除 <script> 的 type="text/javascript"
                     removeStyleLinkTypeAttributes: true, //删除 <style> 和 <link> 的 type="text/css"
                     minifyJS: true, //压缩页面 JS
-                    minifyCSS: true //压缩页面 CSS
+                    minifyCSS: true, //压缩页面 CSS
+                    minifyURLs: true
                 }))
                 .pipe(gulp.dest('./public'))
         });

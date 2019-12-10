@@ -11,7 +11,8 @@ hexo.extend.filter.register('after_post_render', data => {
 
   images.each((i, o) => {
     let src = $(o).attr('src');
-    $(o).attr('data-src', src).removeAttr('src');
+    $(o).attr('data-src', src);
+    $(o).attr('src','/img/loading.gif')
     $(o).addClass('lazyload');
   });
 

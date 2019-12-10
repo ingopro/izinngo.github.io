@@ -49,8 +49,6 @@
     })
   }
 
-  var copy_copyright_js = theme.copy.enable && theme.copy.copyright;
-
   var ClickShowText = 'undefined';
   if (theme.ClickShowText && theme.ClickShowText.enable) {
     ClickShowText = JSON.stringify({
@@ -105,7 +103,6 @@ script.
     runtime_unit: '!{_p("runtime_unit")}',
     runtime: !{runtime},
     copyright: !{copyright},
-    copy_copyright_js: !{copy_copyright_js},
     ClickShowText: !{ClickShowText},
     medium_zoom: !{medium_zoom},
     fancybox: !{fancybox},
