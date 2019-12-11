@@ -27,12 +27,7 @@ menu:
   留言板: /messageboard/ || fa fa-coffee
   友鏈: /link/ || fa fa-link
   關於: /about/ || fa fa-heart
-  # 友鏈2: /link/ || fa fa-link
-  # 關於3: /about/ || fa fa-heart
-  # 友鏈1: /link/ || fa fa-link
-  # 關於2: /about/ || fa fa-heart
-  # 友鏈3: /link/ || fa fa-link
-  # 關於9: /about/ || fa fa-heart
+
 
 
 # Favicon
@@ -104,20 +99,14 @@ local_search:
 # ---------------
 mathjax:
   enable: false
+  per_page: false # true 
 
 # KaTeX
 # ---------------
 katex:
   enable: false
+  per_page: false
   hide_scrollbar: true
-
-
-####   Analysis    ####
-# ---------------
-# baidu_analytics: 
-
-#Google Analytics
-google_analytics: UA-120653953-1
 
 
 # Post info settings
@@ -257,6 +246,16 @@ ICP:
   text: 
   icon: /img/icp.png
 
+####   Analysis    ####
+# ---------------
+# baidu_analytics: 
+
+#Google Analytics
+google_analytics: UA-120653953-1
+
+# Tencent_analytics ID
+tencent_analytics:
+
 # Ads
 # ---------------
 # Google Adsense
@@ -310,6 +309,7 @@ reward:
 related_post:
   enable: true
   limit: 6 # 顯示推薦文章數目
+  date_type: created # or created or updated 文章日期顯示创建日或者更新日
 
 ####    美化/效果    ####
 #--------------------------------
@@ -376,7 +376,7 @@ canvas_ribbon_piao:
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: true
+  enable: false
   color: '0,0,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   opacity: 0.7 # the opacity of line (0~1), default: 0.5.
   zIndex: -1 # z-index property of the background, default: -1.
@@ -542,11 +542,11 @@ autoChangeMode: 2
 #--------------------------------------------
 # medium_zoom https://github.com/francoischalifour/medium-zoom
 medium_zoom:
-  enable: true
+  enable: false
 
 # fancybox http://fancyapps.com/fancybox/3/
 fancybox:
-  enable: false
+  enable: true
 
 
 # Snackbar 彈窗
@@ -557,7 +557,7 @@ snackbar:
   enable: true
   position: bottom-left
   bg_light: '#49b1f5' #light mode時彈窗背景
-  bg_dark: '#2d3035' #dark mode時彈窗背景
+  bg_dark: '#121212' #dark mode時彈窗背景
 
 
 #百度推送
@@ -617,8 +617,9 @@ CDN_USE:
   js:
     # - https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/utils.js
     # - https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/main.js
-    - https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js  #/js/third-party/jquery.min.js
-    - /js/main.js
+    # - https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js  #/js/third-party/jquery.min.js
+    # - /js/main.js
+    - https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/jerryc.js
 
 
 # CDN
@@ -638,8 +639,6 @@ CDN:
   #search
   algolia_search: https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js
   algolia_search_css: https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css
-  algolia_js: /js/search/algolia.js
-  local_search: /js/search/local-search.js
 
   mathjax: https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML
   katex: https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css
@@ -674,7 +673,6 @@ CDN:
   click_heart: https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@latest/js/click_heart.js  #/js/third-party/click_heart.js
   ClickShowText: https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@latest/js/ClickShowText.js #/js/third-party/ClickShowText.js
 
-  translate: https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/tw_cn.js
-  # translate: /js/tw_cn.js
-  runtimeshow: js/runtimeshow.js
+  # translate: https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/tw_cn.js
+  translate: /js/tw_cn.js
 

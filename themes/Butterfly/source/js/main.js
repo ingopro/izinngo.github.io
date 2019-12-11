@@ -69,22 +69,34 @@ $(function () {
 
 
   /**
-   * 進入post頁sidebar自動打開
+   * 進入post頁sidebar處理
    */
-  if ($('#sidebar').hasClass('auto_open')) {
-    if ($(".sidebar-toc__content").children().length > 0) {
-      $('#toggle-sidebar').addClass('on')
-      setTimeout(function () {
-        $("#toggle-sidebar").addClass('on');
-        open_sidebar()
-      }, 400);
-      is_adjust(1)
+  if (GLOBAL_CONFIG.isPost){
+    var isTocContent = $('#sidebar .sidebar-toc__content').children().length > 0 ? true : false
 
-    } else
-      $("#toggle-sidebar").css("display", "none")
-  } else {
-    $('#toggle-sidebar').css('opacity', '1')
+    // sidebar 自動打開
+    if ($('#sidebar').hasClass('auto_open') && isTocContent ) {
+        $('#toggle-sidebar').addClass('on')
+        setTimeout(function () {
+          $("#toggle-sidebar").addClass('on');
+          open_sidebar()
+        }, 400)
+        is_adjust(1)
+    }
+
+    // pc隱藏
+    if (isTocContent){
+      $('#toggle-sidebar').css('opacity','1')
+    } else {
+      $('#sidebar,#toggle-sidebar').css('display','none')
+    }
+    // mobile隱藏
+    if ($('#mobile-sidebar-toc .sidebar-toc__content').children().length === 0) {
+      $('#mobile-sidebar-toc,#mobile-toc-button').css('display','none')
+    }
   }
+
+
 
 
   /**
@@ -331,10 +343,10 @@ $(function () {
   })
 
   $('#mobile-toc-button').on('click', function () {
-    if ($("#mobile-toc-button").hasClass("close")) openMobileSidebar(toc)
+    if ($("#mobile-toc-button").hasClass("close")) openMobileSidebar('toc')
   })
 
-  $('#menu_mask').on('click touchstart', function (e) {
+  $('#menu_mask').on('click', function (e) {
     if ($(".toggle-menu").hasClass("open")) {
       closeMobileSidebar('menu')
       if ($('#toggle-sidebar').hasClass('on')) {
@@ -533,7 +545,7 @@ $(function () {
    * 閲讀模式
    */
   $("#readmode").click(function () {
-    var isDark = $(document.documentElement).attr('data-theme') === 'dark' ? true : false
+    var isDark = $(document.documentElement).attr('data-theme') == 'dark' ? true : false
     $('body').toggleClass('read-mode')
     $('#to_comment').toggleClass('is_invisible')
 
@@ -546,22 +558,28 @@ $(function () {
   /**
    * 字體調整
    */
-  $("#font_plus").click(function () {
-    var font_size_record = parseFloat($('body').css('font-size'))
-    var pre_size_record = parseFloat($('pre').css('font-size'))
-    var code_size_record = parseFloat($('code').css('font-size'))
-    $('body').css('font-size', font_size_record + 1)
-    $('pre').css('font-size', pre_size_record + 1)
-    $('code').css('font-size', code_size_record + 1)
-  });
+  
+  function fontAdjust (name) {
+    var fontSizeRecord = parseFloat($('body').css('font-size'))
+    var preSizeRecord = parseFloat($('pre').css('font-size'))
+    var codeSizeRecord = parseFloat($('code').css('font-size'))
+    if (name == 'plus') {
+      $('body').css('font-size', fontSizeRecord + 1)
+      $('pre').css('font-size', preSizeRecord + 1)
+      $('code').css('font-size', codeSizeRecord + 1)
+    } else {
+      $('body').css('font-size', fontSizeRecord - 1)
+      $('pre').css('font-size', preSizeRecord - 1)
+      $('code').css('font-size', codeSizeRecord - 1)
+    }
+  }
 
-  $("#font_minus").click(function () {
-    var font_size_record = parseFloat($('body').css('font-size'))
-    var pre_size_record = parseFloat($('pre').css('font-size'))
-    var code_size_record = parseFloat($('code').css('font-size'))
-    $('body').css('font-size', font_size_record - 1)
-    $('pre').css('font-size', pre_size_record - 1)
-    $('code').css('font-size', code_size_record - 1)
+  $('#font_plus').click(function () {
+    fontAdjust('plus')
+  })
+
+  $('#font_minus').click(function () {
+    fontAdjust('minus')
   });
 
   /**
@@ -662,54 +680,35 @@ $(function () {
    */
 
   if (typeof autoChangeMode !== "undefined") {
-
-
-    // if (autoChangeMode == '1') {
-    //   window.matchMedia("(prefers-color-scheme: dark)").addListener(function (e) {
-    //     if (e.matches) {
-    //       activateDarkMode()
-    //       change_light_icon()
-    //       Cookies.remove('theme')
-    //     } else {
-    //       activateLightMode()
-    //       change_dark_icon()
-    //       Cookies.remove('theme')
-    //     }
-
-    //   })
-    // }
-
     if (autoChangeMode == '1' || autoChangeMode == '2') {
       if (Cookies.get("theme") == "dark") {
-        change_light_icon()
+        changeLightIcon()
       } else {
-        change_dark_icon()
+        changeDarkIcon()
       }
     }
   }
 
-  function change_light_icon() {
+  function changeLightIcon() {
     $("#darkmode").removeClass("fa-moon-o").addClass("fa-sun-o");
   }
 
-  function change_dark_icon() {
+  function changeDarkIcon() {
     $("#darkmode").removeClass("fa-sun-o").addClass("fa-moon-o");
 
   }
 
   function switchReadMode() {
-
     var nowMode = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
-
     if (nowMode == 'light') {
-      change_light_icon()
+      changeLightIcon()
       activateDarkMode()
       Cookies.set('theme', 'dark', {
         expires: 2
       })
       if (is_Snackbar) snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
     } else {
-      change_dark_icon()
+      changeDarkIcon()
       activateLightMode()
       Cookies.set('theme', 'light', {
         expires: 2
@@ -981,7 +980,7 @@ $(function () {
       s.parentNode.insertBefore(bp, s);
     })();
   }
-
+  
 });
 
 /**

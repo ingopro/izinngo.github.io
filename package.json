@@ -34,8 +34,8 @@
     "live2d-widget-model-tororo": "^1.0.5"
   },
   "scripts": {
-    "push": "hexo clean && hexo algolia && hexo g && hexo douban && gulp && hexo deploy",
-    "show": "hexo clean && hexo g && gulp && hexo s",
+    "push": "hexo clean && hexo algolia && hexo g && hexo douban && gulp",
+    "show": "hexo clean && hexo g && hexo s",
     "update": "git init && git add . && git commit -m 'update' && git push -u origin hexo"
   },
   "devDependencies": {

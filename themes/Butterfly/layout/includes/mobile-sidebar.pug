@@ -41,6 +41,6 @@
     #mobile-sidebar-toc
       .toc_mobile_headline= _p('sidebar.catalog')
       if (page.encrypt == true)
-        .toc-div-class(style="display:none")!=toc(page.origin,{"class":"toc_mobile_items",list_number:tocNumber})
+        .sidebar-toc__content.toc-div-class(style="display:none")!=toc(page.origin,{"class":"toc_mobile_items",list_number:tocNumber})
       else 
-        !=toc(page.content,{"class":"toc_mobile_items",list_number:tocNumber})
+        .sidebar-toc__content!=toc(page.content,{"class":"toc_mobile_items",list_number:tocNumber})
