@@ -76,9 +76,8 @@ html(lang=config.language data-theme=theme.display_mode)
       footer#footer(style=footer_bg data-type=is_bg)
         include ./footer.pug    
     include ./rightside.pug
-    //- if theme.CDN_USE.js.length > 0
-    //-   each item in theme.CDN_USE.js
-    //-     script(src=url_for(item))
+    each item in theme.CDN_USE.js
+      script(src=url_for(item))
     include ./additional-js.pug
     include ./search/index.pug
     
