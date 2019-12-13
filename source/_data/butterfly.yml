@@ -611,8 +611,8 @@ CDN_USE:
   css:
     # - https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/css/index.css
     # - /css/index.css
-    # - https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css
-    - https://cdn.jsdelivr.net/combine/gh/jerryc127/jerryc127.github.io@latest/css/index.css,npm/font-awesome@latest/css/font-awesome.min.css,npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css,npm/node-snackbar@0.1.15/dist/snackbar.min.css
+    - https://cdn.jsdelivr.net/combine/gh/jerryc127/jerryc127.github.io@latest/css/index.css,npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css,npm/node-snackbar@0.1.15/dist/snackbar.min.css
+    - https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css    
     # - https://use.fontawesome.com/releases/v5.8.1/css/all.css #fontawesomeV5_css
 
   js:
