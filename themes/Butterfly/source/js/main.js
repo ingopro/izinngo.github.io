@@ -121,20 +121,12 @@ $(function () {
     $('body').animate({
       paddingLeft: 300
     }, 400)
-
-    $('#sidebar').animate({}, function () {
-      $('#sidebar').css('transform', 'translateX(300px)')
+    $('#sidebar').css('transform', 'translateX(300px)')
+    $('#toggle-sidebar').css({
+      'transform': 'rotateZ(180deg)',
+      'color': '#99a9bf',
+      'opacity': "1"
     })
-
-
-    $('#toggle-sidebar').animate({}, function () {
-      $('#toggle-sidebar').css({
-        'transform': 'rotateZ(180deg)',
-        'color': '#99a9bf',
-        'opacity': "1"
-      })
-    })
-
   }
   $('#toggle-sidebar').on('click', function () {
 

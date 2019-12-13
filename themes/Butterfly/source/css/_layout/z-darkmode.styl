@@ -6,34 +6,31 @@
   ::-webkit-scrollbar-thumb
     background: lighten(#121212,5)
 
+  //網站背景，footer背景
+  #web_bg[data-type=color],
+  #footer[data-type=color]
+    background: darken(#121212,2)
+
+  #web_bg[data-type=photo]:before,
+  #footer[data-type=photo]:before
+    background-color: alpha($dark-black,0.7)
+  
+  #archive,
+  .tag-cloud,
+  #tag,
+  .category-content,
+  #category,
+  #page,
+  .flink,
+  .layout_post
+    background: #121212
+
   #sidebar
     background: #121212
     box-shadow: -0.25rem 0 0.25rem #121212
 
-  if hexo-config("local_search") && hexo-config("local_search.enable")
-    #local-search
-      background: #121212  
-      .local-search-box--input  
-        background: #121212
-        color: alpha(#FFFFFF,0.6)
-          
-      .search-result-title
-        color: alpha(#FFFFFF,0.6)
-
-  if hexo-config("algolia_search.enable")
-    #algolia-search
-      background: #121212
-      .ais-search-box--input
-        background: #121212
-        color: alpha(#FFFFFF,0.6)
-
-      #algolia-search-results
-        .algolia-hit-item-link
-          color: alpha(#FFFFFF,0.6)
-
   .article-container code
     background: #2c2c2c
-    // color: alpha(#FFFFFF,0.6)
           
   .recent-posts
     .recent-post-item
@@ -62,6 +59,26 @@
         a
           color: alpha(#FFFFFF,0.6)
 
+  //代碼框
+  .article-container pre
+    background-color: darken(#121212,3)
+
+  .highlight-tools
+    background: lighten(#121212,3) 
+
+  .article-container .highlight:not(.js-file-line-container)
+    background-color: lighten(#121212, 2)
+
+    .code pre,
+    .gutter pre
+      background-color: lighten(#121212, 2)  
+    
+    table
+      .copy-notice
+        background: lighten(#121212, 3)  
+          
+  .copy-notice
+    background: lighten(#121212, 3)  
               
   blockquote
     color: alpha(#FFFFFF,0.6)
@@ -88,29 +105,6 @@
       color: alpha(#FFFFFF,0.8)
     .post-copyright-info
       color: alpha(#FFFFFF,0.6)
-  
-  //代碼框
-  .article-container pre
-    background-color: darken(#121212,3)
-
-  .highlight-tools
-    background: lighten(#121212,3) 
-
-  .article-container .highlight:not(.js-file-line-container)
-    background-color: lighten(#121212, 2)
-
-    .code pre
-      background-color: lighten(#121212, 2)  
-
-    .gutter pre
-      background: lighten(#121212, 3) 
-    
-    table
-      .copy-notice
-        background: lighten(#121212, 3)  
-          
-  .copy-notice
-    background: lighten(#121212, 3)  
 
   //音樂播放器
   .aplayer
@@ -169,15 +163,6 @@
     .bookmark--animated:before
       background: lighten(#121212,20) !important
 
-  #archive,
-  .tag-cloud,
-  #tag,
-  .category-content,
-  #category,
-  #page,
-  .flink,
-  .layout_post
-    background: #121212
 
   //頭部
   #nav,
@@ -232,14 +217,7 @@
     &:hover
       color: #49b1f5
 
-  //網站背景，footer背景
-  #web_bg[data-type=color],
-  #footer[data-type=color]
-    background: darken(#121212,2)
 
-  #web_bg[data-type=photo]:before,
-  #footer[data-type=photo]:before
-    background-color: alpha($dark-black,0.7)
 
   // 手機 MENU,TOC
   #mobile-sidebar
@@ -331,3 +309,24 @@
 
       .vcontent.expand:after
         background: hsla(204, 5%, 22%, 1)
+
+  if hexo-config("local_search") && hexo-config("local_search.enable")
+    #local-search
+      background: #121212  
+      .local-search-box--input  
+        background: #121212
+        color: alpha(#FFFFFF,0.6)
+          
+      .search-result-title
+        color: alpha(#FFFFFF,0.6)
+
+  if hexo-config("algolia_search.enable")
+    #algolia-search
+      background: #121212
+      .ais-search-box--input
+        background: #121212
+        color: alpha(#FFFFFF,0.6)
+
+      #algolia-search-results
+        .algolia-hit-item-link
+          color: alpha(#FFFFFF,0.6)

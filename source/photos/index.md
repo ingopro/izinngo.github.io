@@ -4,7 +4,7 @@ date: 2019-10-24 22:23:55
 comments: false
 reward: false
 description: 圖庫
-top_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/photo_cover.jpg
+top_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/Photo/photo.jpg
 ---
 
 {% gallery %}

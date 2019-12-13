@@ -157,3 +157,4 @@ So that's it. 9-patch is super easy, once you get it. It's not a perfect way to 
 
 1. [Create resizable bitmaps (9-Patch files)](https://developer.android.com/studio/write/draw9patch)
 2. [Drawables overview](https://developer.android.com/guide/topics/graphics/drawables#nine-patch)
+

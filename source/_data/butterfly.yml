@@ -115,7 +115,7 @@ katex:
 avatar: /image/avatar.png
 
 # the banner image of index
-index_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/top_img_index.jpg
+index_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/Photo/index.jpg
 # 以下鏈接是動態壁紙，每次刷新會更換
 # https://source.unsplash.com/collection/collectionid/1600x900
 # https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
@@ -123,22 +123,22 @@ index_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/top_img_index.jpg
 # https://api.dujin.org/bing/1366.php
 
 # if the banner of page not setting,it will show the top_img
-default_top_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/top_img_index.jpg
+default_top_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/index.jpg
 
 # the default cover of the post
-default_cover: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png
+default_cover: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/default.png
 
 # the banner image of archive page
 archive_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/archive.jpg
 
 # the banner image of tag page
-tag_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/tag-bg.png
+tag_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/tag.png
 
 # the banner image of category page
-category_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/category-bg.jpg
+category_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/img/category.jpg
 
 # 如果你有使用hexo-douban去生成movie界面，可配置這個
-movies_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN/Photo/movie.jpg
+movies_img: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/movie.jpg
 
 # if the photo link cannot connect,it will show that
 lodding_bg:
@@ -610,8 +610,9 @@ Open_Graph_meta: true
 CDN_USE:
   css:
     # - https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/css/index.css
-    - /css/index.css
-    - https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css
+    # - /css/index.css
+    # - https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css
+    - https://cdn.jsdelivr.net/combine/gh/jerryc127/jerryc127.github.io@latest/css/index.css,npm/font-awesome@latest/css/font-awesome.min.css,npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css,npm/node-snackbar@0.1.15/dist/snackbar.min.css
     # - https://use.fontawesome.com/releases/v5.8.1/css/all.css #fontawesomeV5_css
 
   js:
@@ -619,7 +620,7 @@ CDN_USE:
     # - https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/main.js
     # - https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js  #/js/third-party/jquery.min.js
     # - /js/main.js
-    - https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/jerryc.js
+    - https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/jerryc-0b274ead4c.js
 
 
 # CDN
