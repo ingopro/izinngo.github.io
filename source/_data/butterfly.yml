@@ -614,7 +614,7 @@ CDN_USE:
     # - https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js  #/js/third-party/jquery.min.js
     # - /js/main.js
     # - /js/utils.js
-    - https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/jerryc-4f8d5b4512.js
+    - https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/jerryc-986514409b.js
 
 # CDN
 # 非必要不要修改
