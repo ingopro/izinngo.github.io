@@ -17,9 +17,9 @@ function sw(source) {
   var $post_ad = $(
     '<div class="post-ad"><ins class="adsbygoogle" style="display:block " data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-8919908724705274" data-ad-slot="5978969231"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>'
   );
-  var $aside = $(
+  var $aside = $.html($(
     '<div class="card_widget card-ad"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8919908724705274" data-ad-slot="8108145410" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>'
-  );
+  ));
   var $index_ad = $.html(
     $(
       '<div class="recent-post-item article-container ad_height"><ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-8919908724705274" data-ad-slot="1538867630"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>'
@@ -42,7 +42,7 @@ function sw(source) {
   }
 
   $(".post-reward").after($post_ad);
-  $(".card_widget.card-recent-post").after($aside);
+  $(".card-widget.card-recent-post").after($aside);
 
   $(".recent-post-item").each((i, o) => {
     if (i !== 0 && i % 3 == 0) {
