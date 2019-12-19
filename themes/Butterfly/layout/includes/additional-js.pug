@@ -23,10 +23,12 @@
 //-   include ./third-party/canvas-nest.pug 
 
 //- if theme.activate_power_mode.enable
+//-   - var colorful = theme.activate_power_mode.colorful == false ? false : true
+//-   - var shake = theme.activate_power_mode.shake == false ? false : true
 //-   script(src=url_for(theme.CDN.activate_power_mode))
 //-   script.
-//-     POWERMODE.colorful = true; // make power mode colorful
-//-     POWERMODE.shake = true; // turn off shake
+//-     POWERMODE.colorful = !{colorful};
+//-     POWERMODE.shake = !{shake}; 
 //-     document.body.addEventListener('input', POWERMODE);
 
 //- if theme.translate && theme.translate.enable

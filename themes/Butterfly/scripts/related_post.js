@@ -64,7 +64,7 @@ hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {
       result += '<div class="relatedPosts_item"><a href="' + hexoConfig.root + relatedPosts[i].path + '" title="' + relatedPosts[i].title + '">';
       result += '<img class="relatedPosts_cover ' + lazy_class + '"' + lazy_src + '="' + cover + '">';
       if (date_type == 'created') {
-        result += '<div class="relatedPosts_main is_center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i>' + ' ' + dateHelper(relatedPosts[i].created) + '</div>'
+        result += '<div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i>' + ' ' + dateHelper(relatedPosts[i].created) + '</div>'
       } else {
         result += '<div class="relatedPosts_main"><div class="relatedPosts_date"><i class="fa fa-history fa-fw" aria-hidden="true"></i>' + ' ' + dateHelper(relatedPosts[i].updated) + '</div>'
       }

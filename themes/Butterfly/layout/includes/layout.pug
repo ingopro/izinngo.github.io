@@ -29,7 +29,7 @@ html(lang=config.language data-theme=theme.display_mode)
   head
     meta(charset='UTF-8')
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
-    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5")
     title= pageTitle
     meta(name="description" content=pageDescription)
     if pageKeywords
@@ -56,7 +56,7 @@ html(lang=config.language data-theme=theme.display_mode)
         include ./sidebar.pug
       if (!is_post())
         include ./nav.pug
-      #content-outer
+      main#content-outer
         block top_img
         if (!is_post())
           #content-inner.layout_page

@@ -39,7 +39,6 @@ skip_render:
   - 404.html
   - README.md
   - image/pwa/manifest.json
-  - js2/jerry.js
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -85,6 +84,8 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+meta_generator: false
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -123,36 +124,16 @@ aplayer:
   meting: true
 
 
-#melody主題local
-# search:
-#   path: search.xml
-#   field: post
+search:
+  path: search.xml
+  field: post
+  content: true
 
 
-# offline config passed to sw-precache.
-# offline:
-#   maximumFileSizeToCacheInBytes: 10485760 # 缓存的最大文件大小，以字节为单位
-#   staticFileGlobs:
-#     - public/**/*.{js,html,css,png,jpg,gif,svg,webp,eot,ttf,woff,woff2}
-#   # 静态文件合集，如果你的站点使用了例如webp格式的文件，请将文件类型添加进去。
-#   stripPrefix: public
-#   verbose: true
-#   runtimeCaching:
-#     # CDNs - should be cacheFirst, since they should be used specific versions so should not change
-#     - urlPattern: /* # 如果你需要加载CDN资源，请配置该选项，如果没有，可以不配置。
-#       handler: cacheFirst
-#       options:
-#         origin: cdn.jsdelivr.net
-#     - urlPattern: /* # 如果你需要加载CDN资源，请配置该选项，如果没有，可以不配置。
-#       handler: cacheFirst
-#       options:
-#         origin: cdn1.lncld.net
-
-
-algolia:
-  applicationID: '502RMOS83O'
-  apiKey: 'c0621f18b83bdbdec63c1ac56235a5ea'
-  indexName: 'Jerryc'
+# algolia:
+#   applicationID: '502RMOS83O'
+#   apiKey: 'c0621f18b83bdbdec63c1ac56235a5ea'
+#   indexName: 'Jerryc'
 
 nofollow:
   enable: true
@@ -173,24 +154,4 @@ douban:
     title: '那些年,我看過的電影'
     quote: '過去、現在、未來'
   timeout: 10000 
-
-
-live2d:
-  enable: false
-  scriptFrom: local
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
-  tagMode: false
-  log: true
-  model:
-    use: live2d-widget-model-tororo
-  display:
-    position: right
-    width: 150
-    height: 300
-  mobile:
-    show: true
-  react:
-    opacity: 0.7
 

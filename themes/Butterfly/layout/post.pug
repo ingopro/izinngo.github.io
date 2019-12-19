@@ -22,8 +22,8 @@ block top_img
                   
         if (theme.post_meta.categories && page.categories.data.length > 0)
           if (theme.post_meta.date_type)
-            span.post-meta__separator.mobile_hidden |
-          span.mobile_hidden
+            span.post-meta__separator |
+          span
             each item, index in page.categories.data
               i.fa.fa-inbox.post-meta__icon.fa-fw(aria-hidden="true")
               a(href=url_for(item.path)).post-meta__categories #[=item.name]
@@ -40,9 +40,10 @@ block top_img
           .post-meta-pv-cv
             if (theme.wordcount && theme.wordcount.enable && theme.busuanzi.page_pv)
               span.post-meta__separator |
-            if theme.busuanzi.page_pv
-              i.fa.fa-eye.post-meta__icon.fa-fw(aria-hidden="true")        
-              span= _p('post.page_pv') + ':'
+            if theme.busuanzi.page_pv       
+              span
+                i.fa.fa-eye.post-meta__icon.fa-fw(aria-hidden="true") 
+                =_p('post.page_pv') + ':'
               span#busuanzi_value_page_pv
             if (theme.disqus && theme.disqus.enable && theme.disqus.count && page.comments !== false)
               if (theme.busuanzi && theme.busuanzi.page_pv)

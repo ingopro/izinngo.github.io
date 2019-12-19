@@ -16,7 +16,10 @@ top: True
 ---
 
 {% note danger %}
-Butterfly已經升級到V2.0.0，從舊版本升級到V2.0.0，**需重新配置butterfly.yml(_config.yml)**。
+Butterfly已經升級到V2.1.0
+
+1.x版本升級到V2.0.0，**需重新配置butterfly.yml(_config.yml)**。
+
 {% endnote %}
 
 {% note info %}
@@ -30,7 +33,7 @@ https://t.me/hexo_butterfly
 {% endnote %}
 
 {% note primary %}
-本教程更新于2019年12月1日
+本教程更新于2019年12月20日
 {% endnote %}
 
 # 快速開始
@@ -84,6 +87,8 @@ type: （tags,link,categories這三個頁面需要配置）
 comments: (是否需要顯示評論，默認true)
 description:
 top_img: (設置頂部圖)
+mathjax:
+katex:
 ---
 ```
 
@@ -103,6 +108,9 @@ cover:  縮略圖
 toc:  是否顯示toc （除非特定文章設置，可以不寫）
 toc_number: 是否顯示toc數字 （除非特定文章設置，可以不寫）
 copyright: 是否顯示版權 （除非特定文章設置，可以不寫）
+mathjax:
+katex:
+hide:
 ---
 ```
 
@@ -270,6 +278,24 @@ menu:
 > 
 > - 名稱 || 路徑 || icon
 
+**注意：** 導航的文字可自行更改
+
+例如：
+
+```markdown
+menu:
+  首頁: / || fa fa-home
+  時間軸: /archives/ || fa fa-archive
+  標籤: /tags/ || fa fa-tags
+  分類: /categories/ || fa fa-folder-open
+  清單||fa fa-heartbeat:
+    - 音樂 || /music/ || fa fa-music
+    - 照片 || /Gallery/ || fa fa-picture-o
+    - 電影 || /movies/ || fa fa-film
+  友鏈: /link/ || fa fa-link
+  關於: /about/ || fa fa-heart
+```
+
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-menu.png)
 
 ## 代碼
@@ -339,6 +365,10 @@ highlight_shrink: true #代碼框不展開，需點擊 '>' 打開
 `highlight_shrink: false`
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-highlight-shrink-false.png)
+
+`highlight_shrink: none`
+
+![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-docs-highlight-shirk-none.png)
 
 ### 代碼換行
 
@@ -534,6 +564,16 @@ default_cover:
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-post-cover.png)
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-post-cover-show.png)
 
+## 文章隱藏
+
+> 2.1.0版本以上支持
+
+參考*printempw/hexo-hide-posts*，如果想要隱藏文章，可以在文章的Front-matter添加
+
+```mark
+hide: true
+```
+
 ## 頭像
 
 配置`butterfly.yml`
@@ -599,9 +639,10 @@ auto_open_sidebar:
 related_post:
   enable: true
   limit: 6 # 顯示推薦文章數目
+  date_type: created # or created or updated 文章日期顯示创建日或者更新日
 ```
 
-![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-relatedpost.png)
+![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-docs-releatedpost.png)
 
 ## Footer 設置
 
@@ -782,11 +823,13 @@ runtimeshow:
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-runtime.png)
 
-## Note (Bootstrap Callout)
+## 標籤外掛（Tag Plugins）
+
+### Note (Bootstrap Callout)
 
 移植於next主題（注意，書寫不是markdown規範，而是hexo特有的功能，故在其它地方會顯示不出效果）
 
-### 配置
+#### 配置
 
 配置`butterfly.yml`
 
@@ -805,7 +848,7 @@ note:
   light_bg_offset: 0
 ```
 
-### 用法
+#### 用法
 
 ```md
 {% note [class] [no-icon] %}
@@ -820,7 +863,7 @@ All parameters are optional.
 
 具體效果、用法可查看[這裏](https://theme-next.org/docs/tag-plugins/note)
 
-## Gallery相冊
+### Gallery相冊
 
 > 2.0.0以上提供
 
@@ -861,8 +904,9 @@ markdown 圖片格式
 
 ```yaml
 disqus:
-  enable: true # or false
-  shortname: 你的disqus的 short-name
+  enable: true
+  shortname:
+  count: false # top_img顯示評論數
 ```
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-disqus.png)
@@ -875,8 +919,8 @@ disqus:
 
 ```yaml
 laibili:
-  enable: true # or false
-  uid: 你的laibili的uid
+  enable: true
+  uid:
 ```
 
 laibili 的 uid 你能在這裏找到:
@@ -899,6 +943,9 @@ gitalk:
   repo: 你的github倉庫
   owner: 你的github用户名
   admin: 該倉庫的擁有者或協作者
+  language: # en , zh-CN , zh-TW
+  count: false # top_img顯示評論數
+
 ```
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-gitalk.png)
@@ -912,15 +959,17 @@ gitalk:
 ```yaml
 valine:
   enable: false # if you want use valine,please set this value is true
-  appId:   # leancloud application app id
-  appKey:   # leancloud application app key
+  appId: # leancloud application app id
+  appKey: # leancloud application app key
   notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
   verify: false # valine verify code (true/false)
   pageSize: 10 # comment list page size
   avatar: monsterid # gravatar style https://valine.js.org/#/avatar
-  lang: en # i18n: zh-cn/en/tw
+  lang: en # i18n: zh-cn/en
   placeholder: Please leave your footprints # valine comment input placeholder(like: Please leave your footprints )
-  guest_info: nick,mail,link #valine comment header inf
+  guest_info: nick,mail,link #valine comment header info
+  bg: /img/comment_bg.png # valine background
+  count: false # top_img顯示評論數
 ```
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-valine.png)
@@ -1069,6 +1118,43 @@ baidu_analytics: 你的代碼
 google_analytics: 你的代碼 # 通常以`UA-`打頭
 ```
 
+### 騰訊分析
+
+1. 登錄騰訊分析的[官方網站](https://ta.qq.com/)
+
+2. 找到你的站點ID
+
+   ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-docs-tengxun-analysic.png )
+
+3. 配置`butterfly.yml`
+
+   ```yam
+   # Tencent_analytics ID
+   tencent_analytics: 
+   ```
+
+   
+
+## 廣告
+
+### 谷歌廣告
+
+主題已集成谷歌廣告（自動廣告）
+
+配置`butterfly.yml`
+
+```yaml
+google_adsense:
+  enable: true
+  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+  client: # 填入個人識別碼
+  enable_page_level_ads: true
+```
+
+
+
+![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-docs-google-adsense.png)
+
 ## MathJax
 
 > 建議使用 KaTex 獲得更好的效果，下文有介紹！
@@ -1077,9 +1163,13 @@ google_analytics: 你的代碼 # 通常以`UA-`打頭
 
 ```yaml
 mathjax:
-  enable: true # or false
-  cdn: https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML # required
+  enable: true
+  # true 表示每一頁都加載mathjax.js
+  # false 需要時加載，須在使用的Markdown Front-matter 加上 mathjax: true
+  per_page: false
 ```
+
+> 如果`per_page`設爲`true`,則每一頁都會加載Mathjax服務。設爲`false`，則需要在文章`Front-matter`添加`mathjax: true`,對應的文章才會加載Mathjax服務。
 
 然後你需要修改一下默認的`markdown`渲染引擎來實現 MathJax 的效果。
 
@@ -1100,8 +1190,10 @@ mathjax:
 ```yaml
 katex:
   enable: true
-  cdn:
-    css: https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css
+  # true 表示每一頁都加載katex.js
+  # false 需要時加載，須在使用的Markdown Front-matter 加上 katex: true
+  per_page: false
+  hide_scrollbar: true
 ```
 
 你不需要添加`katex.min.js`來渲染數學方程。相應的你需要卸載你之前的 hexo 的 markdown 渲染器以及`hexo-math`，然後安裝新的`hexo-renderer-markdown-it-plus`:
@@ -1210,8 +1302,11 @@ footer_bg: true
 配置`butterfly.yml`
 
 ```yaml
+# 打字效果
 activate_power_mode:
-  enable: true
+  enable: false
+  colorful: true # 冒光特效
+  shake: true # 抖動特效
 ```
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-type-animation.gif)
@@ -1383,6 +1478,27 @@ subtitle:
 
 ![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-index-subtitle.gif)
 
+### 主頁文章cover位置
+
+```yacas
+# 主頁文章COVER顯示位置
+# 三個值可配置 left , right , both
+# left(全部圖片顯示在左邊)，right(全部圖片顯示在右邊)，both(左右左右順序顯示)
+index_post_cover: left
+```
+
+`left`
+
+![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-docs-cover-left.png)
+
+`right`
+
+![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-docs-cover-right.png)
+
+`both`
+
+![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-docs-cover-both.png)
+
 ### 主頁top_img顯示大小
 
 > 適用於 版本號 >= V1.2.0
@@ -1393,7 +1509,6 @@ subtitle:
 # 主頁設置
 # 默認top_img全屏，site_info在中間
 # 使用默認, 都無需填寫（建議默認）
-index_site_info_top:   #主頁標題距離頂部距離  例如 300px/300em/300rem/10%
 index_top_img_height:  #主頁top_img高度 例如 300px/300em/300rem  不能使用百分比
 ```
 
@@ -1403,7 +1518,6 @@ index_top_img_height:  #主頁top_img高度 例如 300px/300em/300rem  不能使
 舉例，當
 
 ```yaml
-index_site_info_top: 40%
 index_top_img_height: 400px
 ```
 
@@ -1567,7 +1681,19 @@ top: True
 
 ## 圖片大圖查看模式
 
-默認為 fancybox,可以選擇改爲 medium_zoom
+### fancybox
+
+配置`butterfly.yml`
+
+```yaml
+# fancybox http://fancyapps.com/fancybox/3/
+fancybox:
+  enable: true
+```
+
+![fancybox.gif](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/fancybox.gif)
+
+### medium_zoom
 
 配置`butterfly.yml`
 
@@ -1575,12 +1701,6 @@ top: True
 medium_zoom:
   enable: true
 ```
-
-> fancybox 打開模式
-
-![fancybox.gif](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/fancybox.gif)
-
-> medium_zoom 打開模式
 
 ![medium_zoom.gif](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/medium_zoom.gif)
 
@@ -1615,10 +1735,12 @@ snackbar:
 音樂界面使用了插件[hexo-tag-aplayer](https://github.com/MoePlayer/hexo-tag-aplayer)。
 使用方法請參考插件的文檔
 
+音樂頁面只是普通的page頁，按普通頁面操作生成就行。
+
 ## 電影
 
 電影界面使用了插件[hexo-douban](https://github.com/mythsman/hexo-douban)。
-使用方法請參考插件的文檔
+使用方法請參考插件的文檔。
 
 # Q & A
 
@@ -1629,11 +1751,14 @@ snackbar:
 
 非常感謝以下網友的打賞
 
-| 名字     | 金額     |
-| ------ | ------ |
-| iMIGw0 | 10     |
-| 百事可樂   | 10     |
-| A*.    | 0.01   |
-| B*X    | 2.33   |
-| 夏目木木、| 5 |
-|*林    | 3.75 |
+| 名字     | 金額   |
+| ------ | ---- |
+| iMIGw0 | 10   |
+| 百事可樂   | 10   |
+| A*.    | 0.01 |
+| B*X    | 2.33 |
+| 夏目木木、  | 5    |
+| *林     | 3.75 |
+| JVxie  | 8.88 |
+| KT     | 5    |
+| *雪     | 10   |

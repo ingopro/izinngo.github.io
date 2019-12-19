@@ -61,7 +61,7 @@ if theme.subtitle.enable
       backSpeed: 50
       });
   else if source == '4'
-    script(type="text/javascript" src="https://sdk.jinrishici.com/v2/browser/jinrishici.js")
+    script(type="text/javascript" src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8")
     script.
       jinrishici.load(function(result) {
         var sub = '!{theme.subtitle.sub}'.length == 0  ? new Array() : '!{theme.subtitle.sub}'.split(",");
