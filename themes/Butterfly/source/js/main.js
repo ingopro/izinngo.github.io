@@ -247,20 +247,18 @@ $(function () {
    * fancybox和 mediumZoom
    */
 
-  var mediumZoom = GLOBAL_CONFIG.mediumZoom
-  var fancybox = GLOBAL_CONFIG.fancybox
-  if (fancybox) {
+  var isMediumZoom = GLOBAL_CONFIG.medium_zoom
+  var isFancybox = GLOBAL_CONFIG.fancybox
+  if (isFancybox) {
     $().fancybox({
       selector: '[data-fancybox]',
       loop: true,
       transitionEffect: 'slide',
       protect: true,
-      // wheel: false,
       buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
     })
-  }
-  if (mediumZoom) {
-    const zoom = mediumZoom(document.querySelectorAll('.mediumZoom'))
+  } else if (isMediumZoom) {
+    const zoom = mediumZoom(document.querySelectorAll(':not(a)>img'))
     zoom.on('open', event => {
       const photoBg = $(document.documentElement).attr('data-theme') === 'dark' ? '#121212' : '#fff'
       zoom.update({

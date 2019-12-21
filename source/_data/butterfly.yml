@@ -661,10 +661,10 @@ CDN:
   snackbar: https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js
 
   #鼠标点击特效
-  anime: https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js #/js/third-party/anime.min.js
+  anime: https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js
   activate_power_mode: https://cdn.jsdelivr.net/npm/activate-power-mode/dist/activate-power-mode.min.js
   fireworks: https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/fireworks.js
   click_heart: https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js
   ClickShowText: https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/ClickShowText.js
 
-  translate: /js/tw_cn.js
+  translate: https://cdn.jsdelivr.net/gh/jerryc127/jerryc127.github.io@latest/js/tw_cn.js
